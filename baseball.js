@@ -63,6 +63,7 @@ var app = new Vue({
 					this.umpire = 'ball 4 take your base'
 					this.balls = 0
 					this.strikes = 0
+					this.firstbase = true
 				}
 			}
 			else if (this.random < 14) {
@@ -81,6 +82,12 @@ var app = new Vue({
 				if (this.strikes < 2){
 					this.strikes += 1
 				}
+			}
+			else if (this.random < 19) {
+				this.umpire = "fly out"
+				this.outs += 1
+				this.balls = 0
+				this.strikes = 0
 			}
 			else if (this.random < 20) {
 				this.umpire = 'Hit!'
