@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Play Ball!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id='app'>
+    <div v-model="home_score" @click="home_score+=1">{{home_score}}</div>
+    <div class="wrapper">
+      <div class="box" id="box-1">1</div>
+      <div class="box" id="box-2"></div>
+      <div class="box" id="box-3"></div>
+      <div class="box" id="box-4"></div>
+      <div class="box" id="box-5"></div>
+      <div class="box" id="box-6"></div>
+      <div class="box" id="box-7"></div>
+      <div class="box" id="box-8"></div>
+      <div class="box" id="box-9"></div>
+      <div class="box" id="box-10"></div>
+      <div class="box" id="box-11"></div>
+      <div class="box" id="box-12"></div>
+      <div class="box" id="box-13"></div>
+      <div class="box" id="box-14"></div>
+      <div class="box" id="box-15"></div>
+      <div class="box" id="box-16"></div>
+      <div class="box" id="box-17"></div>
+      <div class="box" id="box-18"></div>
+      <div class="box" id="box-19"></div>
+      <div class="box" id="box-20"></div>
+      <div class="box" id="box-21"></div>
+      <div class="box" id="box-22"></div>
+      <div class="box" id="box-23"></div>
+      <div class="box" id="box-24"></div>
+      <div class="box" id="box-25"></div>
+      <div class="box" id="box-26"></div>
+      <div class="box" id="box-27"></div>
+      <div class="box" id="box-28"></div>
+      <div class="box" id="box-29"></div>
+      <div class="box" id="box-30"></div>
+      <div class="box" id="box-31"></div>
+      <div class="box" id="box-32"></div>
+      <div class="box" id="box-33"></div>
+      <div class="box" id="box-34"></div>
+      <div class="box" id="box-35"></div>
+      <div class="box" id="box-36"></div>
+      <div class="box" id="box-37"></div>
+      <div class="box" id="box-38"></div>
+      <div class="box" id="box-39"></div>
+      <div class="box" id="box-40"></div>
+      <div class="box" id="box-41"></div>
+      <div class="box" id="box-42"></div>
+      <div class="box" id="box-43"></div>
+      <div class="box" id="box-44"></div>
+      <div class="box" id="box-45"></div>
+      <div class="box" id="box-46"></div>
+      <div class="box" id="box-47"></div>
+      <div class="box" id="box-48"></div>
+      <div class="box" id="box-49"></div>
+      <div class="box" id="box-50"></div>
+      <div class="box" id="box-51"></div>
+      <div class="box" id="box-52"></div>
+      <div class="box" id="box-53"></div>
+      <div class="box" id="box-54"></div>
+      <div class="box" id="box-55"></div>
+      <div class="box" id="box-56"></div>
+      <div class="box" id="box-57"></div>
+      <div class="box" id="box-58"></div>
+      <div class="box" id="box-59"></div>
+      <div class="box" id="box-60"></div>
+      <div class="box" id="box-61"></div>
+      <div class="box" id="box-62"></div>
+      <div class="box" id="box-63"></div>
+      <div class="box" id="box-64"></div>
+      <div class="box" id="box-65"></div>
+      <div class="box" id="box-66"></div>
+      <div class="box" id="box-67"></div>
+      <div class="box" id="box-68">68</div>
+      <div class="box" id="box-69"></div>
+      <div class="box" id="box-70"></div>
+      <div class="box" id="box-71"></div>
+      <div class="box" id="box-72"></div>
+      <div class="box" id="box-73"></div>
+      <div class="box" id="box-74"></div>
+      <div class="box" id="box-75"></div>
+      <div class="box" id="box-76"></div>
+      <div class="box" id="box-77"></div>
+      <div class="box" id="box-78"></div>
+      <div class="box" id="box-79"></div>
+      <div class="box" id="box-80"></div>
+      <div class="box" id="box-81"></div>
+      <div class="box" id="box-82"></div>
+      <div class="box" id="box-83"></div>
+      <div class="box" id="box-84"></div>
+      <div class="box" id="box-85">(2B)</div>
+      <div class="box" id="box-86"></div>
+      <div class="box" id="box-87"></div>
+      <div class="box" id="box-88"></div>
+      <div class="box" id="box-89"></div>
+      <div class="box" id="box-90"></div>
+      <div class="box" id="box-91"></div>
+      <div class="box" id="box-92"></div>
+      <div class="box" id="box-93"></div>
+      <div class="box" id="box-94"></div>
+      <div class="box" id="box-95"></div>
+      <div class="box" id="box-96"></div>
+      <div class="box" id="box-97"></div>
+      <div class="box" id="box-98"></div>
+      <div class="box" id="box-99"></div>
+      <div class="box" id="box-100"></div>
+      <div class="box" id="box-101"></div>
+      <div class="box" id="box-102"></div>
+      <div class="box" id="box-103"></div>
+      <div class="box" id="box-104"></div>
+      <div class="box" id="box-105"></div>
+      <div class="box" id="box-106"></div>
+      <div class="box" id="box-107"></div>
+      <div class="box" id="box-108"></div>
+      <div class="box" id="box-109"></div>
+      <div class="box" id="box-110"></div>
+      <div class="box" id="box-111"></div>
+      <div class="box" id="box-112"></div>
+      <div class="box" id="box-113"></div>
+      <div class="box" id="box-114"></div>
+      <div class="box" id="box-115"></div>
+      <div class="box" id="box-116"></div>
+      <div class="box" id="box-117"></div>
+      <div class="box" id="box-118"></div>
+      <div class="box" id="box-119"></div>
+      <div class="box" id="box-120"></div>
+      <div class="box" id="box-121"></div>
+      <div class="box" id="box-122"></div>
+      <div class="box" id="box-123"></div>
+      <div class="box" id="box-124"></div>
+      <div class="box" id="box-125"></div>
+      <div class="box" id="box-126">126</div>
+      <div class="box" id="box-127"></div>
+      <div class="box" id="box-128"></div>
+      <div class="box" id="box-129"></div>
+      <div class="box" id="box-130"></div>
+      <div class="box" id="box-131"></div>
+      <div class="box" id="box-132"></div>
+      <div class="box" id="box-133"></div>
+      <div class="box" id="box-134"></div>
+      <div class="box" id="box-135">(3B)</div>
+      <div class="box" id="box-136"></div>
+      <div class="box" id="box-137"></div>
+      <div class="box" id="box-138"></div>
+      <div class="box" id="box-139">(1B)</div>
+      <div class="box" id="box-140"></div>
+      <div class="box" id="box-141"></div>
+      <div class="box" id="box-142"></div>
+      <div class="box" id="box-143"></div>
+      <div class="box" id="box-144"></div>
+      <div class="box" id="box-145"></div>
+      <div class="box" id="box-146"></div>
+      <div class="box" id="box-147"></div>
+      <div class="box" id="box-148"></div>
+      <div class="box" id="box-149"></div>
+      <div class="box" id="box-150">(P)</div>
+      <div class="box" id="box-151"></div>
+      <div class="box" id="box-152"></div>
+      <div class="box" id="box-153"></div>
+      <div class="box" id="box-154"></div>
+      <div class="box" id="box-155"></div>
+      <div class="box" id="box-156"></div>
+      <div class="box" id="box-157"></div>
+      <div class="box" id="box-158"></div>
+      <div class="box" id="box-159"></div>
+      <div class="box" id="box-160"></div>
+      <div class="box" id="box-161"></div>
+      <div class="box" id="box-162"></div>
+      <div class="box hideball" id="box-163" :class="{showball:pitchgridone}">o</div>
+      <div class="box" id="box-164"></div>
+      <div class="box" id="box-165"></div>
+      <div class="box" id="box-166"></div>
+      <div class="box" id="box-167"></div>
+      <div class="box" id="box-168"></div>
+      <div class="box" id="box-169"></div>
+      <div class="box" id="box-170"></div>
+      <div class="box" id="box-171"></div>
+      <div class="box" id="box-172"></div>
+      <div class="box" id="box-173"></div>
+      <div class="box" id="box-174"></div>
+      <div class="box" id="box-175"></div>
+      <div class="box hideball" id="box-176" :class='{showball:pitchgridtwo}'>o</div>
+      <div class="box" id="box-177"></div>
+      <div class="box" id="box-178"></div>
+      <div class="box" id="box-179"></div>
+      <div class="box" id="box-180"></div>
+      <div class="box" id="box-181"></div>
+      <div class="box" id="box-182"></div>
+      <div class="box" id="box-183"></div>
+      <div class="box" id="box-184"></div>
+      <div class="box" id="box-185"></div>
+      <div class="box" id="box-186"></div>
+      <div class="box" id="box-187"></div>
+      <div class="box" id="box-188"></div>
+      <div class="box hideball" id="box-189" :class='{showball:pitchgridthree}'>o</div>
+      <div class="box" id="box-190">/</div>
+      <div class="box" id="box-191"></div>
+      <div class="box" id="box-192"></div>
+      <div class="box" id="box-193"></div>
+      <div class="box" id="box-194"></div>
+      <div class="box" id="box-195"></div>
+      <div class="box" id="box-196"></div>
+      <div class="box" id="box-197"></div>
+      <div class="box" id="box-198"></div>
+      <div class="box" id="box-199"></div>
+      <div class="box" id="box-200"></div>
+      <div class="box" id="box-201"></div>
+      <div class="box" id="box-202">
+        (H)
+      </div>
+      <div class="box" id="box-203"></div>
+      <div class="box" id="box-204"></div>
+      <div class="box" id="box-205">205</div>
+      <div class="box" id="box-206"></div>
+      <div class="box" id="box-207"></div>
+      <div class="box" id="box-208"></div>
+      <div class="box" id="box-209"></div>
+      <div class="box" id="box-210">210</div>
+      <div class="box" id="box-211"></div>
+      <div class="box" id="box-212"></div>
+      <div class="box" id="box-213"></div>
+      <div class="box" id="box-214"></div>
+      <div class="box" id="box-215"></div>
+      <div class="box" id="box-216"></div>
+      <div class="box" id="box-217"></div>
+      <div class="box" id="box-218"></div>
+      <div class="box" id="box-219"></div>
+      <div class="box" id="box-220"></div>
+      <div class="box" id="box-221">221</div>
+    </div>
+    <div class='pitchbutton' @click='throwpitch()'>Pitch</div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src='baseball.js'></script>
+</body>
+
+</html>
