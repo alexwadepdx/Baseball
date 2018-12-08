@@ -12,7 +12,6 @@
 <body>
   <div id='app'>
   <div> away team {{awayscore}} - home team {{homescore}}</div>
-    <div>{{ random }}</div>
     <div>{{ umpire }}</div>
     <div> Outs: {{ outs }}</div>
     <div> Count: {{balls}} balls - {{strikes}} strikes</div>
@@ -241,7 +240,7 @@
       <div class="box" id="box-220"></div>
       <div class="box" id="box-221"></div>
     </div>
-    <div class='pitchbutton' @click='throwpitch()'>Pitch</div>
+    <div class='pitchbutton' @click='game()'>Pitch</div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

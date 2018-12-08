@@ -19,6 +19,7 @@ var app = new Vue({
 		thirdbase: false,
 		pitch: 0,
 		hit: 0,
+		awayatbat: true,
 		playscore: 0,
 		hit_list: 0,
 		pitchgridone: false,
@@ -64,7 +65,7 @@ var app = new Vue({
 					this.strikes = 0
 				}
 			}
-			else if (this.random < 12) {
+			else if (this.random < 14) {
 				this.strikes += 1
 				this.umpire = 'strike!'
 				if(this.strikes == 3) {
@@ -75,21 +76,31 @@ var app = new Vue({
 				}
 
 			} 
-			else if (this.random < 15) {
+			else if (this.random < 17) {
 				this.umpire = 'foul ball!'
 				if (this.strikes < 2){
 					this.strikes += 1
 				}
 			}
-			else if (this.random < 15) {
+			else if (this.random < 20) {
 				this.umpire = 'Hit!'
 				this.balls = 0
 				this.strikes = 0
-				this.homescore += this.baserunners()
+				if(this.awayatbat){
+					this.awayscore += this.baserunners()
+				}
+				else {
+					this.homescore += this.baserunners()
+				}
 			} 
 			else {
 				this.umpire = "homerun"
-				this.homescore += this.baserunners()
+				if(this.awayatbat){
+					this.awayscore += this.baserunners()
+				}
+				else{
+					this.homescore += this.baserunners()
+				}
 				this.balls = 0
 				this.strikes = 0
 			}
@@ -129,7 +140,21 @@ var app = new Vue({
 				this.firstbase = true
 				return playscore			
 			}
+		},
+
+		game: function () {
+			if (this.outs == 3) {
+				this.awayatbat = !this.awayatbat 
+				this.outs = 0
+				this.firstbase = false
+				this.secondbase = false
+				this.thirdbase = false
+				this.balls = 0
+				this.strikes = 0
+			}
+			this.throwpitch()
 		}
+				
 	},
 
 	
