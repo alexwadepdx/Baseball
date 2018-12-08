@@ -1,3 +1,7 @@
+function random_number() {
+	return Math.floor((Math.random() * 20) +1)
+}
+
 var app = new Vue({
 	el: '#app',
 	data: {
@@ -5,14 +9,17 @@ var app = new Vue({
 		outs: 0,
 		balls: 0,
 		strikes: 0,
+		umpire: ' ',
+		random: 0,
 		innings: 1,
-		home_score: 0,
-		away_score: 0,
-		first_base: 0,
-		second_base: 0,
-		third_base: 0,
+		homescore: 0,
+		awayscore: 0,
+		firstbase: false,
+		secondbase: false,
+		thirdbase: false,
 		pitch: 0,
 		hit: 0,
+		playscore: 0,
 		hit_list: 0,
 		pitchgridone: false,
 		pitchgridtwo: false,
@@ -32,21 +39,100 @@ var app = new Vue({
 					this.pitchgridthree = true
 					setTimeout(() => {
 						this.pitchgridthree = false
+						this.call_pitch()
 					}, 1000)
 				}, 1000)
 			}, 1000)
 
-
-
-
+			
 
 		},
 		empty: function () {
 			this.pitchgridone = false
 			this.pitchgridtwo = false
 			this.pitchgridthree = false
+		},
+
+		call_pitch: function() {
+			this.random = random_number()
+			if (this.random < 6) {
+				this.balls += 1
+				this.umpire = 'ball!'
+				if (this.balls == 4) {
+					this.umpire = 'ball 4 take your base'
+					this.balls = 0
+					this.strikes = 0
+				}
+			}
+			else if (this.random < 12) {
+				this.strikes += 1
+				this.umpire = 'strike!'
+				if(this.strikes == 3) {
+					this.umpire = 'Strike 3, Batters out'
+					this.outs += 1
+					this.balls = 0
+					this.strikes = 0
+				}
+
+			} 
+			else if (this.random < 15) {
+				this.umpire = 'foul ball!'
+				if (this.strikes < 2){
+					this.strikes += 1
+				}
+			}
+			else if (this.random < 15) {
+				this.umpire = 'Hit!'
+				this.balls = 0
+				this.strikes = 0
+				this.homescore += this.baserunners()
+			} 
+			else {
+				this.umpire = "homerun"
+				this.homescore += this.baserunners()
+				this.balls = 0
+				this.strikes = 0
+			}
+		},
+		baserunners: function(call) {
+			if (this.umpire == "homerun") {
+				let playscore = 1
+				if (this.firstbase){
+					playscore += 1
+				}
+				if (this.secondbase) {
+					playscore += 1
+				}
+				if (this.thirdbase){
+					playscore += 1
+				}
+				this.firstbase = false
+				this.secondbase = false
+				this.thirdbase = false
+				return playscore
+			}
+			else {
+				let playscore = 0
+				
+				if (this.thirdbase){
+					playscore += 1
+					this.thirdbase = false
+				}
+				if (this.secondbase) {
+					this.thirdbase = true
+					this.secondbase = false
+				}
+				if (this.firstbase) {
+					this.secondbase = true
+					
+				}
+				this.firstbase = true
+				return playscore			
+			}
 		}
 	},
+
+	
 	// created: function () {
 	// 	this.throwpitch()
 	//
